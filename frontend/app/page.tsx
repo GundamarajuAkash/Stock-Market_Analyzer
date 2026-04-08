@@ -34,7 +34,8 @@ const stockOptions = [
 "AMZN", "NFLX", "GOOGL", "MSFT", "AMD",
 "BA", "WMT", "INTC", "XOM", "ORCL","STX"
 ];
-
+const BASE_URL = "https://stock-marketanalyzer-production.up.railway.app";
+  
 async function handleAnalyze() {
 if (!ticker.trim()) return;
 
@@ -49,8 +50,8 @@ setError('');
 
 try {
   const response = await fetch(
-    `http://127.0.0.1:8000/analyze/${ticker}?range=${range}`
-  );
+  `${BASE_URL}/analyze/${ticker}?range=${range}`
+);
 
   if (!response.ok) throw new Error('API error');
 
