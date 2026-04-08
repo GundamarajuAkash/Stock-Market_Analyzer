@@ -6,28 +6,19 @@ import './globals.css'
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
+import type { Metadata } from "next";
+
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.app',
-  icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+  title: {
+    default: "Stock Market Analyzer",
+    template: "%s | Stock Market Analyzer",
   },
-}
+  description: "Analyze stocks using ML and technical indicators like RSI, Moving Averages, and MACD.",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/apple-icon.png",
+  },
+};
 
 export default function RootLayout({
   children,
